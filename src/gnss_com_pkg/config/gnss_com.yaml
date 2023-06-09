@@ -1,0 +1,5 @@
+/gnss_com_pkg/gnss_com_driver_node:
+  ros__parameters:
+    baudrate_INS: 115200
+    INS_ComName: /dev/ttyUSB0
+    gnss_frame_id: /gnss

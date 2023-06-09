@@ -1,0 +1,13 @@
+<launch>
+ 
+  <arg name="chassis_can_name" default="can0"/>
+  <arg name="speed_coefficient" default="1.0"/>
+  <arg name="lr_signal" default="true"/>
+
+  <node pkg="chassis_can_pkg" exec="chassis_can_driver_node" name="chassis_can">
+    <param name="chassis_can_name" value="$(var chassis_can_name)"/>
+    <param name="speed_coefficient" value="$(var speed_coefficient)"/>
+    <param name="lr_signal" value="$(var lr_signal)"/>
+  </node>
+  
+</launch>

@@ -1,0 +1,15 @@
+<launch>
+ 
+  <arg name="baudrate_IMU" default="230400"/>
+  <arg name="IMU_ComName" default="/dev/ttyUSB0"/>
+  <arg name="gravity_acc" default="9.8"/>
+  <arg name="imu_frame_id" default="/lidar_front/imu"/>
+
+  <node pkg="imu_com_pkg" exec="imu_com_driver_node" name="imu_com">
+    <param name="baudrate_IMU" value="$(var baudrate_IMU)"/>
+    <param name="IMU_ComName" value="$(var IMU_ComName)"/>
+    <param name="gravity_acc" value="$(var gravity_acc)"/>
+    <param name="imu_frame_id" value="$(var imu_frame_id)"/>
+  </node>
+  
+</launch>

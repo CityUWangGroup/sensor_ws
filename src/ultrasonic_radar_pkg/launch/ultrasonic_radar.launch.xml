@@ -1,0 +1,21 @@
+<launch>
+ 
+  <arg name="baudrate_UltrasonicRadar" default="9600"/>
+  <arg name="UltrasonicRadar1_ComName" default="/dev/ultraCOM0"/>
+  <arg name="UltrasonicRadar2_ComName" default="/dev/ultraCOM1"/>
+  <arg name="UltrasonicRadar3_ComName" default="/dev/ultraCOM2"/>
+  <arg name="UltrasonicRadar4_ComName" default="/dev/ultraCOM3"/>
+  <arg name="UltrasonicRadar5_ComName" default="/dev/ultraCOM4"/>
+  <arg name="UltrasonicRadar6_ComName" default="/dev/ultraCOM5"/>
+
+  <node pkg="ultrasonic_radar_pkg" exec="ultrasonic_radar_node" name="ultrasonic_radar">
+    <param name="baudrate_UltrasonicRadar" value="$(var baudrate_UltrasonicRadar)"/>
+    <param name="UltrasonicRadar1_ComName" value="$(var UltrasonicRadar1_ComName)"/>
+    <param name="UltrasonicRadar2_ComName" value="$(var UltrasonicRadar2_ComName)"/>
+    <param name="UltrasonicRadar3_ComName" value="$(var UltrasonicRadar3_ComName)"/>
+    <param name="UltrasonicRadar4_ComName" value="$(var UltrasonicRadar4_ComName)"/>
+    <param name="UltrasonicRadar5_ComName" value="$(var UltrasonicRadar5_ComName)"/>
+    <param name="UltrasonicRadar6_ComName" value="$(var UltrasonicRadar6_ComName)"/>
+  </node>
+  
+</launch>

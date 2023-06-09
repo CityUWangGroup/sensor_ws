@@ -1,0 +1,13 @@
+<launch>
+ 
+  <arg name="baudrate_INS" default="115200"/>
+  <arg name="INS_ComName" default="/dev/ttyUSB0"/>
+  <arg name="gnss_frame_id" default="/gnss"/>
+
+  <node pkg="gnss_com_pkg" exec="gnss_com_driver_node" name="gnss_com">
+    <param name="baudrate_INS" value="$(var baudrate_INS)"/>
+    <param name="INS_ComName" value="$(var INS_ComName)"/>
+    <param name="gnss_frame_id" value="$(var gnss_frame_id)"/>
+  </node>
+  
+</launch>

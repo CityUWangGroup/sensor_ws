@@ -1,0 +1,5 @@
+/imu_can_pkg/imu_can_driver_node:
+  ros__parameters:
+    imu_can_name: can0
+    gravity_acc: 9.8
+    imu_frame_id: /lidar_front/imu

@@ -1,0 +1,13 @@
+<launch>
+ 
+  <arg name="imu_can_name" default="can0"/>
+  <arg name="gravity_acc" default="9.8"/>
+  <arg name="imu_frame_id" default="/lidar_front/imu"/>
+
+  <node pkg="imu_can_pkg" exec="imu_can_driver_node" name="imu_can">
+    <param name="imu_can_name" value="$(var imu_can_name)"/>
+    <param name="gravity_acc" value="$(var gravity_acc)"/>
+    <param name="imu_frame_id" value="$(var imu_frame_id)"/>
+  </node>
+  
+</launch>

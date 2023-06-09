@@ -1,0 +1,6 @@
+/imu_com_pkg/imu_com_diver_node:
+  ros__parameters:
+    baudrate_IMU: 230400
+    IMU_ComName: /dev/ttyUSB0
+    gravity_acc: 9.8
+    imu_frame_id: /lidar_front/imu

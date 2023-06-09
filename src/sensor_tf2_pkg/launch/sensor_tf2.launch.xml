@@ -1,0 +1,294 @@
+<launch>
+ 
+  <arg name="lidar_main_tf2_flag" default="true"/>
+  <arg name="lidar_imu_tf2_flag" default="true"/>
+  <arg name="lidar_1_tf2_flag" default="true"/>
+  <arg name="lidar_2_tf2_flag" default="true"/>
+  <arg name="lidar_3_tf2_flag" default="true"/>
+  <arg name="lidar_4_tf2_flag" default="true"/>
+  <arg name="lidar_5_tf2_flag" default="true"/>
+  <arg name="lidar_6_tf2_flag" default="true"/>
+  <arg name="ins_tf2_flag" default="true"/>
+  <arg name="gnss_tf2_flag" default="true"/>
+  <arg name="radar_tf2_flag" default="true"/>
+  <arg name="world_frame_id" default="/base_link"/>
+  <arg name="lidar_main_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="lidar_imu_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="lidar_1_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="lidar_2_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="lidar_3_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="lidar_4_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="lidar_5_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="lidar_6_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="ins_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="gnss_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="radar_frame_id" default="/lidar_front/points_xyzi"/>
+  <arg name="lidar_main_orintation_flag" default="true"/>
+  <arg name="lidar_imu_orintation_flag" default="true"/>
+  <arg name="lidar_1_orintation_flag" default="true"/>
+  <arg name="lidar_2_orintation_flag" default="true"/>
+  <arg name="lidar_3_orintation_flag" default="true"/>
+  <arg name="lidar_4_orintation_flag" default="true"/>
+  <arg name="lidar_5_orintation_flag" default="true"/>
+  <arg name="lidar_6_orintation_flag" default="true"/>
+  <arg name="ins_orintation_flag" default="true"/>
+  <arg name="gnss_orintation_flag" default="true"/>
+  <arg name="radar_orintation_flag" default="true"/>
+  <arg name="base_2_lidar_main_linear_x" default="0.0"/>
+  <arg name="base_2_lidar_main_linear_y" default="0.0"/>
+  <arg name="base_2_lidar_main_linear_z" default="0.0"/>
+  <arg name="base_2_lidar_main_orintation_x" default="0.0"/>
+  <arg name="base_2_lidar_main_orintation_y" default="0.0"/>
+  <arg name="base_2_lidar_main_orintation_z" default="0.0"/>
+  <arg name="base_2_lidar_main_orintation_w" default="0.0"/>
+  <arg name="base_2_lidar_main_angle_x" default="0.0"/>
+  <arg name="base_2_lidar_main_angle_y" default="0.0"/>
+  <arg name="base_2_lidar_main_angle_z" default="0.0"/>
+  <arg name="base_2_lidar_imu_linear_x" default="0.0"/>
+  <arg name="base_2_lidar_imu_linear_y" default="0.0"/>
+  <arg name="base_2_lidar_imu_linear_z" default="0.0"/>
+  <arg name="base_2_lidar_imu_orintation_x" default="0.0"/>
+  <arg name="base_2_lidar_imu_orintation_y" default="0.0"/>
+  <arg name="base_2_lidar_imu_orintation_z" default="0.0"/>
+  <arg name="base_2_lidar_imu_orintation_w" default="0.0"/>
+  <arg name="base_2_lidar_imu_angle_x" default="0.0"/>
+  <arg name="base_2_lidar_imu_angle_y" default="0.0"/>
+  <arg name="base_2_lidar_imu_angle_z" default="0.0"/>
+  <arg name="base_2_lidar_1_linear_x" default="0.0"/>
+  <arg name="base_2_lidar_1_linear_y" default="0.0"/>
+  <arg name="base_2_lidar_1_linear_z" default="0.0"/>
+  <arg name="base_2_lidar_1_orintation_x" default="0.0"/>
+  <arg name="base_2_lidar_1_orintation_y" default="0.0"/>
+  <arg name="base_2_lidar_1_orintation_z" default="0.0"/>
+  <arg name="base_2_lidar_1_orintation_w" default="0.0"/>
+  <arg name="base_2_lidar_1_angle_x" default="0.0"/>
+  <arg name="base_2_lidar_1_angle_y" default="0.0"/>
+  <arg name="base_2_lidar_1_angle_z" default="0.0"/>
+  <arg name="base_2_lidar_2_linear_x" default="0.0"/>
+  <arg name="base_2_lidar_2_linear_y" default="0.0"/>
+  <arg name="base_2_lidar_2_linear_z" default="0.0"/>
+  <arg name="base_2_lidar_2_orintation_x" default="0.0"/>
+  <arg name="base_2_lidar_2_orintation_y" default="0.0"/>
+  <arg name="base_2_lidar_2_orintation_z" default="0.0"/>
+  <arg name="base_2_lidar_2_orintation_w" default="0.0"/>
+  <arg name="base_2_lidar_2_angle_x" default="0.0"/>
+  <arg name="base_2_lidar_2_angle_y" default="0.0"/>
+  <arg name="base_2_lidar_2_angle_z" default="0.0"/>
+  <arg name="base_2_lidar_3_linear_x" default="0.0"/>
+  <arg name="base_2_lidar_3_linear_y" default="0.0"/>
+  <arg name="base_2_lidar_3_linear_z" default="0.0"/>
+  <arg name="base_2_lidar_3_orintation_x" default="0.0"/>
+  <arg name="base_2_lidar_3_orintation_y" default="0.0"/>
+  <arg name="base_2_lidar_3_orintation_z" default="0.0"/>
+  <arg name="base_2_lidar_3_orintation_w" default="0.0"/>
+  <arg name="base_2_lidar_3_angle_x" default="0.0"/>
+  <arg name="base_2_lidar_3_angle_y" default="0.0"/>
+  <arg name="base_2_lidar_3_angle_z" default="0.0"/>
+  <arg name="base_2_lidar_4_linear_x" default="0.0"/>
+  <arg name="base_2_lidar_4_linear_y" default="0.0"/>
+  <arg name="base_2_lidar_4_linear_z" default="0.0"/>
+  <arg name="base_2_lidar_4_orintation_x" default="0.0"/>
+  <arg name="base_2_lidar_4_orintation_y" default="0.0"/>
+  <arg name="base_2_lidar_4_orintation_z" default="0.0"/>
+  <arg name="base_2_lidar_4_orintation_w" default="0.0"/>
+  <arg name="base_2_lidar_4_angle_x" default="0.0"/>
+  <arg name="base_2_lidar_4_angle_y" default="0.0"/>
+  <arg name="base_2_lidar_4_angle_z" default="0.0"/>
+  <arg name="base_2_lidar_5_linear_x" default="0.0"/>
+  <arg name="base_2_lidar_5_linear_y" default="0.0"/>
+  <arg name="base_2_lidar_5_linear_z" default="0.0"/>
+  <arg name="base_2_lidar_5_orintation_x" default="0.0"/>
+  <arg name="base_2_lidar_5_orintation_y" default="0.0"/>
+  <arg name="base_2_lidar_5_orintation_z" default="0.0"/>
+  <arg name="base_2_lidar_5_orintation_w" default="0.0"/>
+  <arg name="base_2_lidar_5_angle_x" default="0.0"/>
+  <arg name="base_2_lidar_5_angle_y" default="0.0"/>
+  <arg name="base_2_lidar_5_angle_z" default="0.0"/>
+  <arg name="base_2_lidar_6_linear_x" default="0.0"/>
+  <arg name="base_2_lidar_6_linear_y" default="0.0"/>
+  <arg name="base_2_lidar_6_linear_z" default="0.0"/>
+  <arg name="base_2_lidar_6_orintation_x" default="0.0"/>
+  <arg name="base_2_lidar_6_orintation_y" default="0.0"/>
+  <arg name="base_2_lidar_6_orintation_z" default="0.0"/>
+  <arg name="base_2_lidar_6_orintation_w" default="0.0"/>
+  <arg name="base_2_lidar_6_angle_x" default="0.0"/>
+  <arg name="base_2_lidar_6_angle_y" default="0.0"/>
+  <arg name="base_2_lidar_6_angle_z" default="0.0"/>
+  <arg name="base_2_ins_linear_x" default="0.0"/>
+  <arg name="base_2_ins_linear_y" default="0.0"/>
+  <arg name="base_2_ins_linear_z" default="0.0"/>
+  <arg name="base_2_ins_orintation_x" default="0.0"/>
+  <arg name="base_2_ins_orintation_y" default="0.0"/>
+  <arg name="base_2_ins_orintation_z" default="0.0"/>
+  <arg name="base_2_ins_orintation_w" default="0.0"/>
+  <arg name="base_2_ins_angle_x" default="0.0"/>
+  <arg name="base_2_ins_angle_y" default="0.0"/>
+  <arg name="base_2_ins_angle_z" default="0.0"/>
+  <arg name="base_2_gnss_linear_x" default="0.0"/>
+  <arg name="base_2_gnss_linear_y" default="0.0"/>
+  <arg name="base_2_gnss_linear_z" default="0.0"/>
+  <arg name="base_2_gnss_orintation_x" default="0.0"/>
+  <arg name="base_2_gnss_orintation_y" default="0.0"/>
+  <arg name="base_2_gnss_orintation_z" default="0.0"/>
+  <arg name="base_2_gnss_orintation_w" default="0.0"/>
+  <arg name="base_2_gnss_angle_x" default="0.0"/>
+  <arg name="base_2_gnss_angle_y" default="0.0"/>
+  <arg name="base_2_gnss_angle_z" default="0.0"/>
+  <arg name="base_2_radar_linear_x" default="0.0"/>
+  <arg name="base_2_radar_linear_y" default="0.0"/>
+  <arg name="base_2_radar_linear_z" default="0.0"/>
+  <arg name="base_2_radar_orintation_x" default="0.0"/>
+  <arg name="base_2_radar_orintation_y" default="0.0"/>
+  <arg name="base_2_radar_orintation_z" default="0.0"/>
+  <arg name="base_2_radar_orintation_w" default="0.0"/>
+  <arg name="base_2_radar_angle_x" default="0.0"/>
+  <arg name="base_2_radar_angle_y" default="0.0"/>
+  <arg name="base_2_radar_angle_z" default="0.0"/>
+
+  <node pkg="sensor_tf2_pkg" exec="sensor_tf2_node" name="sensor_tf2">
+    <param name="lidar_main_tf2_flag" value="$(var lidar_main_tf2_flag)"/>
+    <param name="lidar_imu_tf2_flag" value="$(var lidar_imu_tf2_flag)"/>
+    <param name="lidar_1_tf2_flag" value="$(var lidar_1_tf2_flag)"/>
+    <param name="lidar_2_tf2_flag" value="$(var lidar_2_tf2_flag)"/>
+    <param name="lidar_3_tf2_flag" value="$(var lidar_3_tf2_flag)"/>
+    <param name="lidar_4_tf2_flag" value="$(var lidar_4_tf2_flag)"/>
+    <param name="lidar_5_tf2_flag" value="$(var lidar_5_tf2_flag)"/>
+    <param name="lidar_6_tf2_flag" value="$(var lidar_6_tf2_flag)"/>
+    <param name="ins_tf2_flag" value="$(var ins_tf2_flag)"/>
+    <param name="gnss_tf2_flag" value="$(var gnss_tf2_flag)"/>
+    <param name="radar_tf2_flag" value="$(var radar_tf2_flag)"/>
+    <param name="world_frame_id" value="$(var world_frame_id)"/>
+    <param name="lidar_main_frame_id" value="$(var lidar_main_frame_id)"/>
+    <param name="lidar_imu_frame_id" value="$(var lidar_imu_frame_id)"/>
+    <param name="lidar_1_frame_id" value="$(var lidar_1_frame_id)"/>
+    <param name="lidar_2_frame_id" value="$(var lidar_2_frame_id)"/>
+    <param name="lidar_3_frame_id" value="$(var lidar_3_frame_id)"/>
+    <param name="lidar_4_frame_id" value="$(var lidar_4_frame_id)"/>
+    <param name="lidar_5_frame_id" value="$(var lidar_5_frame_id)"/>
+    <param name="lidar_6_frame_id" value="$(var lidar_6_frame_id)"/>
+    <param name="ins_frame_id" value="$(var ins_frame_id)"/>
+    <param name="gnss_frame_id" value="$(var gnss_frame_id)"/>
+    <param name="radar_frame_id" value="$(var radar_frame_id)"/>
+    <param name="lidar_main_orintation_flag" value="$(var lidar_main_orintation_flag)"/>
+    <param name="lidar_imu_orintation_flag" value="$(var lidar_imu_orintation_flag)"/>
+    <param name="lidar_1_orintation_flag" value="$(var lidar_1_orintation_flag)"/>
+    <param name="lidar_2_orintation_flag" value="$(var lidar_2_orintation_flag)"/>
+    <param name="lidar_3_orintation_flag" value="$(var lidar_3_orintation_flag)"/>
+    <param name="lidar_4_orintation_flag" value="$(var lidar_4_orintation_flag)"/>
+    <param name="lidar_5_orintation_flag" value="$(var lidar_5_orintation_flag)"/>
+    <param name="lidar_6_orintation_flag" value="$(var lidar_6_orintation_flag)"/>
+    <param name="ins_orintation_flag" value="$(var ins_orintation_flag)"/>
+    <param name="gnss_orintation_flag" value="$(var gnss_orintation_flag)"/>
+    <param name="radar_orintation_flag" value="$(var radar_orintation_flag)"/>
+    <param name="base_2_lidar_main_linear_x" value="$(var base_2_lidar_main_linear_x)"/>
+    <param name="base_2_lidar_main_linear_y" value="$(var base_2_lidar_main_linear_y)"/>
+    <param name="base_2_lidar_main_linear_z" value="$(var base_2_lidar_main_linear_z)"/>
+    <param name="base_2_lidar_main_orintation_x" value="$(var base_2_lidar_main_orintation_x)"/>
+    <param name="base_2_lidar_main_orintation_y" value="$(var base_2_lidar_main_orintation_y)"/>
+    <param name="base_2_lidar_main_orintation_z" value="$(var base_2_lidar_main_orintation_z)"/>
+    <param name="base_2_lidar_main_orintation_w" value="$(var base_2_lidar_main_orintation_w)"/>
+    <param name="base_2_lidar_main_angle_x" value="$(var base_2_lidar_main_angle_x)"/>
+    <param name="base_2_lidar_main_angle_y" value="$(var base_2_lidar_main_angle_y)"/>
+    <param name="base_2_lidar_main_angle_z" value="$(var base_2_lidar_main_angle_z)"/>
+    <param name="base_2_lidar_imu_linear_x" value="$(var base_2_lidar_imu_linear_x)"/>
+    <param name="base_2_lidar_imu_linear_y" value="$(var base_2_lidar_imu_linear_y)"/>
+    <param name="base_2_lidar_imu_linear_z" value="$(var base_2_lidar_imu_linear_z)"/>
+    <param name="base_2_lidar_imu_orintation_x" value="$(var base_2_lidar_imu_orintation_x)"/>
+    <param name="base_2_lidar_imu_orintation_y" value="$(var base_2_lidar_imu_orintation_y)"/>
+    <param name="base_2_lidar_imu_orintation_z" value="$(var base_2_lidar_imu_orintation_z)"/>
+    <param name="base_2_lidar_imu_orintation_w" value="$(var base_2_lidar_imu_orintation_w)"/>
+    <param name="base_2_lidar_imu_angle_x" value="$(var base_2_lidar_imu_angle_x)"/>
+    <param name="base_2_lidar_imu_angle_y" value="$(var base_2_lidar_imu_angle_y)"/>
+    <param name="base_2_lidar_imu_angle_z" value="$(var base_2_lidar_imu_angle_z)"/>
+    <param name="base_2_lidar_1_linear_x" value="$(var base_2_lidar_1_linear_x)"/>
+    <param name="base_2_lidar_1_linear_y" value="$(var base_2_lidar_1_linear_y)"/>
+    <param name="base_2_lidar_1_linear_z" value="$(var base_2_lidar_1_linear_z)"/>
+    <param name="base_2_lidar_1_orintation_x" value="$(var base_2_lidar_1_orintation_x)"/>
+    <param name="base_2_lidar_1_orintation_y" value="$(var base_2_lidar_1_orintation_y)"/>
+    <param name="base_2_lidar_1_orintation_z" value="$(var base_2_lidar_1_orintation_z)"/>
+    <param name="base_2_lidar_1_orintation_w" value="$(var base_2_lidar_1_orintation_w)"/>
+    <param name="base_2_lidar_1_angle_x" value="$(var base_2_lidar_1_angle_x)"/>
+    <param name="base_2_lidar_1_angle_y" value="$(var base_2_lidar_1_angle_y)"/>
+    <param name="base_2_lidar_1_angle_z" value="$(var base_2_lidar_1_angle_z)"/>
+    <param name="base_2_lidar_2_linear_x" value="$(var base_2_lidar_2_linear_x)"/>
+    <param name="base_2_lidar_2_linear_y" value="$(var base_2_lidar_2_linear_y)"/>
+    <param name="base_2_lidar_2_linear_z" value="$(var base_2_lidar_2_linear_z)"/>
+    <param name="base_2_lidar_2_orintation_x" value="$(var base_2_lidar_2_orintation_x)"/>
+    <param name="base_2_lidar_2_orintation_y" value="$(var base_2_lidar_2_orintation_y)"/>
+    <param name="base_2_lidar_2_orintation_z" value="$(var base_2_lidar_2_orintation_z)"/>
+    <param name="base_2_lidar_2_orintation_w" value="$(var base_2_lidar_2_orintation_w)"/>
+    <param name="base_2_lidar_2_angle_x" value="$(var base_2_lidar_2_angle_x)"/>
+    <param name="base_2_lidar_2_angle_y" value="$(var base_2_lidar_2_angle_y)"/>
+    <param name="base_2_lidar_2_angle_z" value="$(var base_2_lidar_2_angle_z)"/>
+    <param name="base_2_lidar_3_linear_x" value="$(var base_2_lidar_3_linear_x)"/>
+    <param name="base_2_lidar_3_linear_y" value="$(var base_2_lidar_3_linear_y)"/>
+    <param name="base_2_lidar_3_linear_z" value="$(var base_2_lidar_3_linear_z)"/>
+    <param name="base_2_lidar_3_orintation_x" value="$(var base_2_lidar_3_orintation_x)"/>
+    <param name="base_2_lidar_3_orintation_y" value="$(var base_2_lidar_3_orintation_y)"/>
+    <param name="base_2_lidar_3_orintation_z" value="$(var base_2_lidar_3_orintation_z)"/>
+    <param name="base_2_lidar_3_orintation_w" value="$(var base_2_lidar_3_orintation_w)"/>
+    <param name="base_2_lidar_3_angle_x" value="$(var base_2_lidar_3_angle_x)"/>
+    <param name="base_2_lidar_3_angle_y" value="$(var base_2_lidar_3_angle_y)"/>
+    <param name="base_2_lidar_3_angle_z" value="$(var base_2_lidar_3_angle_z)"/>
+    <param name="base_2_lidar_4_linear_x" value="$(var base_2_lidar_4_linear_x)"/>
+    <param name="base_2_lidar_4_linear_y" value="$(var base_2_lidar_4_linear_y)"/>
+    <param name="base_2_lidar_4_linear_z" value="$(var base_2_lidar_4_linear_z)"/>
+    <param name="base_2_lidar_4_orintation_x" value="$(var base_2_lidar_4_orintation_x)"/>
+    <param name="base_2_lidar_4_orintation_y" value="$(var base_2_lidar_4_orintation_y)"/>
+    <param name="base_2_lidar_4_orintation_z" value="$(var base_2_lidar_4_orintation_z)"/>
+    <param name="base_2_lidar_4_orintation_w" value="$(var base_2_lidar_4_orintation_w)"/>
+    <param name="base_2_lidar_4_angle_x" value="$(var base_2_lidar_4_angle_x)"/>
+    <param name="base_2_lidar_4_angle_y" value="$(var base_2_lidar_4_angle_y)"/>
+    <param name="base_2_lidar_4_angle_z" value="$(var base_2_lidar_4_angle_z)"/>
+    <param name="base_2_lidar_5_linear_x" value="$(var base_2_lidar_5_linear_x)"/>
+    <param name="base_2_lidar_5_linear_y" value="$(var base_2_lidar_5_linear_y)"/>
+    <param name="base_2_lidar_5_linear_z" value="$(var base_2_lidar_5_linear_z)"/>
+    <param name="base_2_lidar_5_orintation_x" value="$(var base_2_lidar_5_orintation_x)"/>
+    <param name="base_2_lidar_5_orintation_y" value="$(var base_2_lidar_5_orintation_y)"/>
+    <param name="base_2_lidar_5_orintation_z" value="$(var base_2_lidar_5_orintation_z)"/>
+    <param name="base_2_lidar_5_orintation_w" value="$(var base_2_lidar_5_orintation_w)"/>
+    <param name="base_2_lidar_5_angle_x" value="$(var base_2_lidar_5_angle_x)"/>
+    <param name="base_2_lidar_5_angle_y" value="$(var base_2_lidar_5_angle_y)"/>
+    <param name="base_2_lidar_5_angle_z" value="$(var base_2_lidar_5_angle_z)"/>
+    <param name="base_2_lidar_6_linear_x" value="$(var base_2_lidar_6_linear_x)"/>
+    <param name="base_2_lidar_6_linear_y" value="$(var base_2_lidar_6_linear_y)"/>
+    <param name="base_2_lidar_6_linear_z" value="$(var base_2_lidar_6_linear_z)"/>
+    <param name="base_2_lidar_6_orintation_x" value="$(var base_2_lidar_6_orintation_x)"/>
+    <param name="base_2_lidar_6_orintation_y" value="$(var base_2_lidar_6_orintation_y)"/>
+    <param name="base_2_lidar_6_orintation_z" value="$(var base_2_lidar_6_orintation_z)"/>
+    <param name="base_2_lidar_6_orintation_w" value="$(var base_2_lidar_6_orintation_w)"/>
+    <param name="base_2_lidar_6_angle_x" value="$(var base_2_lidar_6_angle_x)"/>
+    <param name="base_2_lidar_6_angle_y" value="$(var base_2_lidar_6_angle_y)"/>
+    <param name="base_2_lidar_6_angle_z" value="$(var base_2_lidar_6_angle_z)"/>
+    <param name="base_2_ins_linear_x" value="$(var base_2_ins_linear_x)"/>
+    <param name="base_2_ins_linear_y" value="$(var base_2_ins_linear_y)"/>
+    <param name="base_2_ins_linear_z" value="$(var base_2_ins_linear_z)"/>
+    <param name="base_2_ins_orintation_x" value="$(var base_2_ins_orintation_x)"/>
+    <param name="base_2_ins_orintation_y" value="$(var base_2_ins_orintation_y)"/>
+    <param name="base_2_ins_orintation_z" value="$(var base_2_ins_orintation_z)"/>
+    <param name="base_2_ins_orintation_w" value="$(var base_2_ins_orintation_w)"/>
+    <param name="base_2_ins_angle_x" value="$(var base_2_ins_angle_x)"/>
+    <param name="base_2_ins_angle_y" value="$(var base_2_ins_angle_y)"/>
+    <param name="base_2_ins_angle_z" value="$(var base_2_ins_angle_z)"/>
+    <param name="base_2_gnss_linear_x" value="$(var base_2_gnss_linear_x)"/>
+    <param name="base_2_gnss_linear_y" value="$(var base_2_gnss_linear_y)"/>
+    <param name="base_2_gnss_linear_z" value="$(var base_2_gnss_linear_z)"/>
+    <param name="base_2_gnss_orintation_x" value="$(var base_2_gnss_orintation_x)"/>
+    <param name="base_2_gnss_orintation_y" value="$(var base_2_gnss_orintation_y)"/>
+    <param name="base_2_gnss_orintation_z" value="$(var base_2_gnss_orintation_z)"/>
+    <param name="base_2_gnss_orintation_w" value="$(var base_2_gnss_orintation_w)"/>
+    <param name="base_2_gnss_angle_x" value="$(var base_2_gnss_angle_x)"/>
+    <param name="base_2_gnss_angle_y" value="$(var base_2_gnss_angle_y)"/>
+    <param name="base_2_gnss_angle_z" value="$(var base_2_gnss_angle_z)"/>
+    <param name="base_2_radar_linear_x" value="$(var base_2_radar_linear_x)"/>
+    <param name="base_2_radar_linear_y" value="$(var base_2_radar_linear_y)"/>
+    <param name="base_2_radar_linear_z" value="$(var base_2_radar_linear_z)"/>
+    <param name="base_2_radar_orintation_x" value="$(var base_2_radar_orintation_x)"/>
+    <param name="base_2_radar_orintation_y" value="$(var base_2_radar_orintation_y)"/>
+    <param name="base_2_radar_orintation_z" value="$(var base_2_radar_orintation_z)"/>
+    <param name="base_2_radar_orintation_w" value="$(var base_2_radar_orintation_w)"/>
+    <param name="base_2_radar_angle_x" value="$(var base_2_radar_angle_x)"/>
+    <param name="base_2_radar_angle_y" value="$(var base_2_radar_angle_y)"/>
+    <param name="base_2_radar_angle_z" value="$(var base_2_radar_angle_z)"/>
+  </node>
+</launch>

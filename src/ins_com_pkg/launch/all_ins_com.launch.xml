@@ -1,0 +1,13 @@
+<launch>
+ 
+  <arg name="baudrate_INS" default="921600"/>
+  <arg name="INS_ComName" default="/dev/insCOM0"/>
+  <arg name="ins_frame_id" default="/ins"/>
+
+  <node pkg="ins_com_pkg" exec="all_ins_com_driver_node" name="all_ins_com">
+    <param name="baudrate_INS" value="$(var baudrate_INS)"/>
+    <param name="INS_ComName" value="$(var INS_ComName)"/>
+    <param name="ins_frame_id" value="$(var ins_frame_id)"/>
+  </node>
+  
+</launch>

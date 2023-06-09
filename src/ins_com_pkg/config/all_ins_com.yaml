@@ -1,0 +1,5 @@
+/ins_com_pkg/all_ins_com_driver_node:
+  ros__parameters:
+    baudrate_INS: 115200
+    INS_ComName: /dev/ttyUSB0
+    ins_frame_id: /ins

@@ -1,0 +1,8 @@
+/ultrasonic_radar_pkg/ultrasonic_radar_node:
+  baudrate_UltrasonicRadar: 9600
+  UltrasonicRadar1_ComName: /dev/ttyUSB0
+  UltrasonicRadar2_ComName: /dev/ttyUSB0
+  UltrasonicRadar3_ComName: /dev/ttyUSB0
+  UltrasonicRadar4_ComName: /dev/ttyUSB0
+  UltrasonicRadar5_ComName: /dev/ttyUSB0
+  UltrasonicRadar6_ComName: /dev/ttyUSB0

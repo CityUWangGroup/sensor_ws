@@ -1,0 +1,5 @@
+/chassis_can_pkg/chassis_can_node:
+  ros__parameters:
+    chassis_can_name: can0
+    speed_coefficient: 1.0
+    lr_signal: 1
