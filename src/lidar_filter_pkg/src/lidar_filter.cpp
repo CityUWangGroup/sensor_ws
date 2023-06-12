@@ -22,8 +22,8 @@ class Lidar_flag : public rclcpp::Node{
     this->declare_parameter("h1", -1.8); 
     this->declare_parameter("h2", 0.15); 
     this->declare_parameter("lidar_autoware_flag", false); 
-    this->declare_parameter("lidar_autoware_topic", "/sensing/lidar/top/pointcloud_raw_ex"); 
-    this->declare_parameter("lidar_autoware_frame_id", "sensor_kit_base_link"); 
+    this->declare_parameter("lidar_autoware_topic", "/sensing/lidar/top/outlier_filtered/pointcloud"); 
+    this->declare_parameter("lidar_autoware_frame_id", "base_link"); 
     
     /*获取参数*/
     this->get_parameter("lidar_origin_data_topic", lidar_origin_data_topic);
